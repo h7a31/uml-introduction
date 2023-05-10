@@ -1,0 +1,7 @@
+@startuml 演習3-4
+class "車" as car {
+}
+class "タイヤ" as ti{
+}
+car "1"*--"4" ti
+@enduml
