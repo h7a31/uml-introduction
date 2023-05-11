@@ -1,0 +1,20 @@
+@startuml SD_利用者と予約画面
+hide footbox
+'次のシーケンスを満たすように、シーケンス図を作成しなさい。同期メッセージに関してはリターンも表記すること。
+'　１.利用者クラスのオブジェクトuserは、ログインを行う（予約画面にログインメッセージを送る）
+'　　また、ログインメッセージは非同期とする
+'　２．次に予約画面クラスのオブジェクトは、自分自身の確認操作(認証）を呼び出す（同期）
+
+skinparam style strictuml /' 厳密なUMLに準拠する'/
+participant "利用者:入力画面" as login
+participant ":予約画面" as resave
+activate login
+login -> resave: ログイン（）
+note right of login : ログインメッセージ
+activate resave
+resave -> resave:認証 ()
+activate resave
+deactivate resave
+deactivate login
+
+@enduml
