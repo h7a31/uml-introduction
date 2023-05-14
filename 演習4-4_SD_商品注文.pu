@@ -1,0 +1,31 @@
+@startuml 注文
+hide footbox
+Actor 受注係 as A
+participant ":注文登録画面" as R <<boundary>>>>
+participant ":商品" as S <<entity>>
+participant ":注文" as T <<entity>>
+
+activate A
+    A -> R : 商品情報確認()
+
+activate R
+    R -> S : 商品情報習得()
+
+activate S
+    R <<-- S : 商品情報
+deactivate S
+
+    R -> R : 商品情報表示(商品情報)
+activate R
+deactivate R
+deactivate R
+    A -> R : 商品登録(注文情報)
+
+
+create T
+activate R
+    R --> T : 生成する() <<create>>
+activate T
+deactivate A
+
+@enduml
