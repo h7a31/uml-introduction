@@ -1,0 +1,25 @@
+@startuml
+hide footbox
+Actor ユーザー as user
+participant ":ブラウザ" as A 
+participant ":Webサーバー" as B 
+participant ":画像サーバー" as C 
+activate user
+user -> A : リンク画像を押す
+
+activate A
+A -> B : 画像ファイル名を渡す
+
+activate B
+B -> C : 画像ファイル名を探す\n命令を渡す
+
+activate C
+C -> C : 画像ファイルを探す
+B <<-- C : 画像ファイル
+deactivate C
+
+A <<-- B : HTMLと画像ファイル
+deactivate B
+user <<-- A : 画像の一覧
+deactivate user
+@enduml
