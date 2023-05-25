@@ -1,0 +1,6 @@
+@startuml 自動販売機_cl図
+' left to right direction
+自動販売機"1" *-- ボタン
+自動販売機"1" *-- 料金装置
+自動販売機"1" *-- ベンダー装置
+@enduml
