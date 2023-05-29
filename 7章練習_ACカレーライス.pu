@@ -1,0 +1,41 @@
+@startuml 並列処理
+title カレーライスの作り方
+start
+:材料を用意する;
+fork
+fork
+:野菜を洗う;
+:野菜を切る;
+fork again
+:肉を炒める;
+end fork
+:鍋に肉と野菜を加えて炒める;
+:水を加える;
+note right
+じゃがいもだけ取り出しておく
+end note
+:隠し味を入れる;
+note right
+はちみつ or ヨーグルト
+end note
+
+fork
+:具材を煮込む;
+note right
+材料が柔らかくなるまで（約20分）
+煮込み10分経過後にじゃがいも投入
+end note
+fork again
+:あくを取る;
+end fork
+:ルーを入れて煮込む;
+
+fork again
+:お米を洗う;
+:お米を炊く;
+end fork
+
+:ご飯を盛る;
+:カレーを盛り付ける;
+stop
+@enduml
