@@ -4,7 +4,7 @@ actor ユーザー
 actor 光センサー
 actor 左右モーター
 rectangle ライントレーサーシステム {
-usecase ラインの右境界戦場を進む as a
+usecase ラインの右境界線上を進む as a
 }
 ユーザー -- a
 a -- 光センサー
