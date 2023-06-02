@@ -1,0 +1,11 @@
+@startuml ライントレーサー_st図
+' left to right direction
+state 電源SW_ON {
+    state 右旋回 :右モーターOFF\n左モーターON
+    state 左旋回 :右モーターON\n左モーターOFF
+}
+電源SW_OFF -right-> 電源SW_ON: スイッチを入れる
+電源SW_ON -left-> 電源SW_OFF: スイッチを切る
+右旋回 -right-> 左旋回: ラインを外れる（光センサーが明るい）
+左旋回 -left-> 右旋回: ラインに乗る（光センサーが暗い）
+@enduml
