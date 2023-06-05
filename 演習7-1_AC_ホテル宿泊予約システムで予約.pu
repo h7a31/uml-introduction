@@ -1,0 +1,11 @@
+@startuml ホテル宿泊予約システムで予約
+
+start
+repeat
+:ユーザ名入力;
+:パスワード入力;
+repeat while (認証) -> [失敗]
+:予約;
+stop
+
+@enduml
